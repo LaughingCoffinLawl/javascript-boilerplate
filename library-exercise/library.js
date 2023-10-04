@@ -1,4 +1,23 @@
-const myLibrary = [];
+const myLibrary = [
+  {
+    title: "test",
+    author: "test",
+    nPage: "test",
+    read: "12",
+  },
+  {
+    title: "test",
+    author: "test",
+    nPage: "test",
+    read: "12",
+  },
+  {
+    title: "test",
+    author: "test",
+    nPage: "test",
+    read: "12",
+  },
+];
 
 // gets all the elements we need
 const btnCreateNewBook = document.getElementById("submit");
@@ -33,6 +52,10 @@ function closePopUp() {
 // add an event listener to the button to add the book to the array
 btnCreateNewBook.addEventListener("click", addBookToLibrary);
 
+function refreshHTML() {
+  location.reload();
+}
+
 // function to create the book from
 // the infos that user entered in the popup form
 function addBookToLibrary() {
@@ -54,13 +77,52 @@ function displayBooks() {
   const booksContainer = document.querySelector("#books-container");
   const booksGrid = document.createElement("div");
   booksGrid.classList.add("books-grid");
+  booksGrid.setAttribute("id", "books-grid");
   booksContainer.appendChild(booksGrid);
 
   // create the structure for the books
-  myLibrary.forEach((book) => {
-    console.log("Titolo: " + book.title);
-    console.log("Numero pagine: " + book.nPage);
-    console.log("Autore: " + book.author);
-    console.log("Già letto: " + book.read);
+  myLibrary.forEach((book, index) => {
+    // gets the container id to append new chields
+    const bookGridElement = document.querySelector("#books-grid");
+
+    const indexGrid = document.createElement("div");
+    indexGrid.setAttribute("id", "index-grid");
+    bookGridElement.appendChild(indexGrid);
+
+    // creates the title div
+    const lblTitle = document.createElement("div");
+    lblTitle.classList.add("label-title");
+    lblTitle.textContent = "Title: " + myLibrary[index].title;
+    indexGrid.appendChild(lblTitle);
+
+    // creates the author div
+    const lblAuthor = document.createElement("div");
+    lblAuthor.classList.add("label-author");
+    lblAuthor.textContent = "Author: " + myLibrary[index].author;
+    indexGrid.appendChild(lblAuthor);
+
+    // creates the number of page div
+    const lblnPage = document.createElement("div");
+    lblnPage.classList.add("label-npage");
+    lblnPage.textContent = "N Page: " + myLibrary[index].nPage;
+    indexGrid.appendChild(lblnPage);
+
+    // creates the read or not div
+    const lblRead = document.createElement("div");
+    lblRead.classList.add("label-read");
+    if (myLibrary[index].read == false) {
+      lblRead.textContent = "Already read: No";
+    } else {
+      lblRead.textContent = "Already read: Yes";
+    }
+    indexGrid.appendChild(lblRead);
+
+    // create the delete button for each book
+    const deleteButton = document.createElement("button");
+    deleteButton.classList.add("delete-button");
+    deleteButton.setAttribute("id", "delete-button");
+    deleteButton.setAttribute("data-id", index);
+    deleteButton.textContent = "Delete";
+    indexGrid.appendChild(deleteButton);
   });
 }

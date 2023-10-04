@@ -68,3 +68,29 @@ svg :hover {
 .submit:hover {
   background-color: green;
 }
+
+#books-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
+}
+
+#index-grid {
+  border: 1px solid;
+  display: grid;
+  grid-template-rows: 25px 25px 25px 25px 25px 25px;
+  width: 150px;
+  justify-items: center;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.label-author,
+.label-title,
+.label-npage,
+.label-read {
+  margin: 2px;
+  width: 130px;
+  border-bottom: 1px solid;
+  text-align: center;
+}
