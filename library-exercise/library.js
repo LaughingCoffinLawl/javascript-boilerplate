@@ -1,21 +1,21 @@
 const myLibrary = [
   {
-    title: "test",
-    author: "test",
-    nPage: "test",
-    read: "12",
+    title: "test1",
+    author: "test1",
+    nPage: "test1",
+    read: "false",
   },
   {
-    title: "test",
-    author: "test",
-    nPage: "test",
-    read: "12",
+    title: "test2",
+    author: "test2",
+    nPage: "test2",
+    read: "true",
   },
   {
-    title: "test",
-    author: "test",
-    nPage: "test",
-    read: "12",
+    title: "test3",
+    author: "test3",
+    nPage: "test3",
+    read: "true",
   },
 ];
 
@@ -54,11 +54,13 @@ btnCreateNewBook.addEventListener("click", addBookToLibrary);
 
 function refreshHTML() {
   location.reload();
+  displayBooks();
 }
 
 // function to create the book from
 // the infos that user entered in the popup form
 function addBookToLibrary() {
+  console.log(myLibrary.length);
   const myAuthor = document.getElementById("author").value;
   const myName = document.getElementById("name").value;
   const mynPage = document.getElementById("nPage").value;
@@ -73,6 +75,7 @@ function addBookToLibrary() {
 
 // displays all the books in the array
 function displayBooks() {
+  console.log(myLibrary.length);
   // create the first div uses for the grid
   const booksContainer = document.querySelector("#books-container");
   const booksGrid = document.createElement("div");
@@ -82,7 +85,8 @@ function displayBooks() {
 
   // create the structure for the books
   myLibrary.forEach((book, index) => {
-    // gets the container id to append new chields
+    console.log("sono qui");
+    // gets the container id to append new childs
     const bookGridElement = document.querySelector("#books-grid");
 
     const indexGrid = document.createElement("div");
@@ -117,12 +121,25 @@ function displayBooks() {
     }
     indexGrid.appendChild(lblRead);
 
-    // create the delete button for each book
+    // creates the delete button for each book
     const deleteButton = document.createElement("button");
     deleteButton.classList.add("delete-button");
     deleteButton.setAttribute("id", "delete-button");
     deleteButton.setAttribute("data-id", index);
     deleteButton.textContent = "Delete";
     indexGrid.appendChild(deleteButton);
+
+    deleteButton.addEventListener("click", function () {
+      deleteBooks(deleteButton.getAttribute("data-id"));
+    });
   });
+}
+
+function deleteBooks(bookToDelete) {
+  console.log(bookToDelete);
+  console.log(myLibrary.length);
+  console.log("ciao");
+  myLibrary.splice(bookToDelete, 1);
+  console.log(myLibrary.length);
+  refreshHTML();
 }
