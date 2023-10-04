@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="library.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+        <div class="button-container">
+            <button id="add-button" class="add">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" fill="black" viewBox="0 0 24 24"><title>plus-circle</title><path d="M17,13H13V17H11V13H7V11H11V7H13V11H17M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>
+            </button>
+            <p>Add a Book</p>
+        </div>
+        <div class="books-container" id="books-container">
+
+        </div>
+    </div>
+        
+<dialog open id="pop-up" >
+    <div class="pop-container">
+        <div class="inputs">
+            <label for="" class="name">Name</label>
+            <input type="text" class="name" id="name"/>
+            <label for="" class="author">Author</label>
+            <input type="text" class="author" id="author"/>
+            <label for="" class="lblnPage">Number of pages</label>
+            <input type="text" class="nPage" id="nPage"/>
+            <label for="" class=lblRead">Read</label>
+            <input type="radio" class="read" id="read" />
+        </div>
+          <button class="submit" id="submit">Submit</button>
+          <button class="close" id="close">Close</button>
+    </div>
+</dialog>
+    <script src="library.js"></script>
+  </body>
+</html>

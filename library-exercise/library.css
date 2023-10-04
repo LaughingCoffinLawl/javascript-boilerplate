@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.button-container {
+  display: grid;
+  margin: 10px;
+  justify-items: center;
+}
+
+.button-container p {
+  align-self: center;
+}
+
+.add {
+  border: 1px solid;
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+svg :hover {
+  fill: white;
+}
+
+.book-add-container {
+  display: none;
+}
+
+#pop-up {
+  background: white;
+  border: 1px solid black;
+  padding: 10px;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.pop-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  height: 200px;
+  width: 300px;
+  justify-items: center;
+}
+
+.close {
+  grid-column: 2;
+  grid-row: 2 / 3;
+  width: 60px;
+  height: 40px;
+  margin: 20px;
+}
+
+.close:hover {
+  background-color: crimson;
+}
+
+.submit {
+  grid-column: 1;
+  grid-row: 2 / 3;
+  width: 60px;
+  height: 40px;
+  margin: 20px;
+}
+
+.submit:hover {
+  background-color: green;
+}
