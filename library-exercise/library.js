@@ -53,7 +53,8 @@ function closePopUp() {
 btnCreateNewBook.addEventListener("click", addBookToLibrary);
 
 function refreshHTML() {
-  location.reload();
+  const divToReload = document.getElementById("books-container");
+  divToReload.innerHTML = "";
   displayBooks();
 }
 
@@ -71,6 +72,7 @@ function addBookToLibrary() {
   myLibrary.push(myBook);
   displayBooks();
   popUpWindow.close();
+  refreshHTML();
 }
 
 // displays all the books in the array
