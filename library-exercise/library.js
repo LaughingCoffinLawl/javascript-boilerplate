@@ -50,7 +50,9 @@ function closePopUp() {
 }
 
 // add an event listener to the button to add the book to the array
-btnCreateNewBook.addEventListener("click", addBookToLibrary);
+btnCreateNewBook.addEventListener("click", function () {
+  addBookToLibrary();
+});
 
 function refreshHTML() {
   const divToReload = document.getElementById("books-container");
@@ -61,7 +63,6 @@ function refreshHTML() {
 // function to create the book from
 // the infos that user entered in the popup form
 function addBookToLibrary() {
-  console.log(myLibrary.length);
   const myAuthor = document.getElementById("author").value;
   const myName = document.getElementById("name").value;
   const mynPage = document.getElementById("nPage").value;
@@ -77,7 +78,6 @@ function addBookToLibrary() {
 
 // displays all the books in the array
 function displayBooks() {
-  console.log(myLibrary.length);
   // create the first div uses for the grid
   const booksContainer = document.querySelector("#books-container");
   const booksGrid = document.createElement("div");
@@ -87,7 +87,6 @@ function displayBooks() {
 
   // create the structure for the books
   myLibrary.forEach((book, index) => {
-    console.log("sono qui");
     // gets the container id to append new childs
     const bookGridElement = document.querySelector("#books-grid");
 
@@ -114,14 +113,21 @@ function displayBooks() {
     indexGrid.appendChild(lblnPage);
 
     // creates the read or not div
-    const lblRead = document.createElement("div");
-    lblRead.classList.add("label-read");
-    if (myLibrary[index].read == false) {
-      lblRead.textContent = "Already read: No";
-    } else {
-      lblRead.textContent = "Already read: Yes";
+    const lblRead = document.createElement("button");
+    lblRead.classList.add("read-button");
+    lblRead.setAttribute("id", "label-read" + index);
+    lblRead.setAttribute("data-id", index);
+    if (myLibrary[index].read == false) lblRead.textContent = "Not Read";
+    else {
+      lblRead.textContent = "Read";
+      lblRead.style.backgroundColor = "green";
     }
     indexGrid.appendChild(lblRead);
+
+    // listener read button
+    lblRead.addEventListener("click", function () {
+      changeReadStatus(lblRead.getAttribute("data-id"));
+    });
 
     // creates the delete button for each book
     const deleteButton = document.createElement("button");
@@ -138,10 +144,19 @@ function displayBooks() {
 }
 
 function deleteBooks(bookToDelete) {
-  console.log(bookToDelete);
-  console.log(myLibrary.length);
-  console.log("ciao");
   myLibrary.splice(bookToDelete, 1);
-  console.log(myLibrary.length);
   refreshHTML();
+}
+
+function changeReadStatus(statusToChange) {
+  const readValue = document.getElementById("label-read" + statusToChange);
+  if (myLibrary[statusToChange].read == false) {
+    myLibrary[statusToChange].read = true;
+    readValue.textContent = "Read";
+    readValue.style.backgroundColor = "green";
+  } else {
+    myLibrary[statusToChange].read = false;
+    readValue.textContent = "Not Read";
+    readValue.style.backgroundColor = "white";
+  }
 }

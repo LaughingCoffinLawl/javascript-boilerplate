@@ -80,9 +80,11 @@ svg :hover {
   display: grid;
   grid-template-rows: 25px 25px 25px 25px 25px 25px;
   width: 150px;
+  height: 200px;
   justify-items: center;
-  margin: 10px;
+  margin: 15px;
   border-radius: 10px;
+  row-gap: 10px;
 }
 
 .label-author,
@@ -93,4 +95,8 @@ svg :hover {
   width: 130px;
   border-bottom: 1px solid;
   text-align: center;
+}
+
+.delete-button:hover {
+  background-color: crimson;
 }
