@@ -1,0 +1,63 @@
+@font-face {
+  font-family: "summer_pixel_22regular";
+  src: url("fonts/summerpixel22regular-je0w7-webfont.woff2") format("woff2"),
+    url("fonts/summerpixel22regular-je0w7-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: "summer_pixel_22regular";
+}
+
+.header {
+  text-align: center;
+}
+
+.start {
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.start:hover {
+  background-color: green;
+}
+
+.board {
+  display: none;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 5px;
+  margin: 0 auto;
+  max-width: 300px;
+  justify-content: center;
+  align-content: center;
+}
+.cell {
+  display: grid;
+  width: 100px;
+  height: 100px;
+  font-size: 36px;
+  cursor: pointer;
+  background-color: #eee;
+  justify-content: center;
+  align-content: center;
+}
+
+.reset {
+  display: none;
+  align-content: center;
+}
+
+.win-message {
+  text-align: center;
+}
+
+.reset {
+  width: 80px;
+}
+
+.footer {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
