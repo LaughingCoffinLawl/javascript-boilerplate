@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="\todo-list\dist\style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="content">
+      <div class="header">
+        <div class="header-text">My Todo List</div>
+        <img
+          src="/todo-list/src/assets/check-all.svg"
+          alt=""
+          class="header-logo"
+        />
+      </div>
+      <div class="main-container">
+        <nav class="sidebar">
+          <div class="nav-text">
+            <img
+              src="/todo-list/src/assets/file-document-edit.svg"
+              alt=""
+              class="logo"
+            />
+            <p class="title">My Tasks</p>
+            <button class="addbutton" id="addbutton">+</button>
+          </div>
+          <div class="added-tasks"></div>
+          <button class="deletebutton">Delete</button>
+        </nav>
+        <main class="main"></main>
+      </div>
+      <div class="footer">Created by Veglia Marco &#9426;</div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

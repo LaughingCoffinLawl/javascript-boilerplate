@@ -1,0 +1,102 @@
+@font-face {
+  font-family: "OpenSansLight";
+  src: url("fonts/fonts/OpenSans-Light-webfont.eot");
+  src: url("fonts/OpenSans-Light-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("/todo-list/src/assets/fonts/OpenSans-Light.ttf") format("truetype"),
+    url("fonts/OpenSans-Light-webfont.svg#OpenSansLight") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  font-family: OpenSansLight;
+  font-size: 20px;
+}
+
+body {
+  background-color: lightcoral;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100wh;
+  height: 100vh;
+}
+
+#content {
+  display: grid;
+  grid-column: 1fr 2fr;
+  height: 400px;
+  width: 800px;
+  border: 5px solid;
+  border-radius: 10px;
+}
+
+.sidebar {
+  border: 1px solid;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 0.5fr 0.8fr 1fr;
+  column-gap: 5px;
+  height: 30px;
+  border: 1px solid;
+}
+
+.header-text {
+  text-align: right;
+  grid-column: 2 / 3;
+}
+
+.main-container {
+  border: 1px solid;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  height: 72vh;
+}
+
+.nav-text {
+  margin: 5px;
+  display: grid;
+  grid-template-columns: 0.16fr 1fr 1.4fr;
+}
+
+.addbutton {
+  width: 27px;
+  border-radius: 15px;
+  scale: 0.8;
+  border: none;
+}
+
+.addbutton:hover {
+  background-color: green;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.addbutton:active {
+  background-color: #3e8e41;
+  box-shadow: 0 1px #666;
+  transform: translateY(2px);
+}
+
+.deletebutton {
+  margin: 7px;
+}
+
+.deletebutton:hover {
+  background-color: red;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.deletebutton:active {
+  background-color: #df5454;
+  box-shadow: 0 1px #666;
+  transform: translateY(2px);
+}
+
+.footer {
+  text-align: center;
+  margin-top: 10px;
+}
