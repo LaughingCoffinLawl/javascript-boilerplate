@@ -54,7 +54,7 @@ body {
   border: 1px solid;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  height: 72vh;
+  height: 48.5vh;
 }
 
 .nav-text {
@@ -99,4 +99,13 @@ body {
 .footer {
   text-align: center;
   margin-top: 10px;
+}
+
+.active {
+  background-color: aqua;
+}
+
+.sub-tasks-div {
+  border: 1px solid;
+  font-size: 16px;
 }

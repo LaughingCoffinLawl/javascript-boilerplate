@@ -1,3 +1,3 @@
-import displayTasks from "./tasks";
+import createDialogTasks from "./dialog&tasks";
 
-displayTasks();
+createDialogTasks();
