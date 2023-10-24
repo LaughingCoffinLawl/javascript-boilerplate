@@ -1,0 +1,54 @@
+.carousel-container {
+  position: relative;
+  width: 400px;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  justify-content: center;
+}
+
+.carousel-slide img {
+  width: 500px;
+  height: 250px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.carousel-container {
+  position: relative;
+}
+
+.carousel-slide {
+  position: relative;
+  width: 100%; /* Ensure the slide container has a width */
+}
+
+.dot-container {
+  position: absolute;
+  bottom: 10px; /* Adjust the position as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  z-index: 1; /* Place the dots above the image */
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: gray;
+  border-radius: 50%;
+  margin: 0 5px; /* Adjust the spacing between dots */
+  cursor: pointer;
+  transition: background-color 0.3s; /* Add a transition for dot color change */
+  margin-bottom: 25px;
+}
+
+.dot.active {
+  background-color: red; /* Change the color of the active dot */
+}
