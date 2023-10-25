@@ -1,0 +1,26 @@
+body {
+  display: grid;
+  justify-content: center;
+}
+
+.form {
+  width: 330px;
+  height: auto;
+  border: 1px solid;
+  justify-content: flex-start;
+}
+
+.container {
+  margin: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.submit {
+  width: 100px;
+}
+
+#gif {
+  width: 200px;
+  display: none;
+}
