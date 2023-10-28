@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="weather.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:wght@100"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div class="header">
+        <input
+          type="search"
+          class="search"
+          id="search"
+          placeholder="Search..."
+        />
+        <button class="search-button" id="search-button">
+          <span class="material-symbols-sharp">search</span>
+        </button>
+      </div>
+      <main class="main" id="main">
+        <div class="basic-info-div" id="basic-info-div"></div>
+        <div class="main-container" id="main-container"></div>
+      </main>
+    </div>
+    <script src="weather.js"></script>
+  </body>
+</html>
